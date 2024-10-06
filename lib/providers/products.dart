@@ -1,5 +1,10 @@
+import 'dart:convert';
+
 import 'package:attic_mobile/types/product.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
+int counter = 0;
 
 final Product product = Product.fromMap({
   "_id": "66e6af48a33d768383063509",
@@ -101,8 +106,27 @@ class ProductsProvider with ChangeNotifier {
 
   List<Product> getRandProducts(int count) {
     return List.generate(count, (_) {
-      return _products![
-          DateTime.now().millisecondsSinceEpoch % _products!.length];
+      return _products![++counter % _products!.length];
     });
+  }
+
+  void fetchProducts() async {
+    final res = await http.get(
+      Uri.parse("http://localhost:3000/v1/product/all"),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        // 'Authorization': await getJWTtoken(),
+      },
+    );
+
+    final json = jsonDecode(res.body);
+
+    final products = json["data"];
+    _products = products.map<Product>((x) => Product.fromMap(x)).toList();
+
+    print(_products!.length);
+
+    notifyListeners();
   }
 }

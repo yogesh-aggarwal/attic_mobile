@@ -63,6 +63,8 @@ class _RootState extends State<Root> {
   @override
   void initState() {
     super.initState();
+
+    context.read<ProductsProvider>().fetchProducts();
   }
 
   Widget _buildBottomBarButton(int index, IconData icon) {

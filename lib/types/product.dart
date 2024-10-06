@@ -124,7 +124,7 @@ class ProductStats {
   factory ProductStats.fromMap(Map<String, dynamic> map) {
     return ProductStats(
       views: map['views'],
-      rating: map['rating'],
+      rating: map['rating'].toDouble(),
       reviewsCount: map['reviewsCount'],
     );
   }
@@ -153,10 +153,10 @@ class ProductCosting {
 
   factory ProductCosting.fromMap(Map<String, dynamic> map) {
     return ProductCosting(
-      originalPrice: map['originalPrice'],
-      sellingPrice: map['sellingPrice'],
-      discountInPercent: map['discountInPercent'],
-      baseDeliveryCharges: map['baseDeliveryCharges'],
+      originalPrice: map['originalPrice'].toDouble(),
+      sellingPrice: map['sellingPrice'].toDouble(),
+      discountInPercent: map['discountInPercent'].toDouble(),
+      baseDeliveryCharges: map['baseDeliveryCharges'].toDouble(),
     );
   }
 
@@ -194,9 +194,18 @@ class Product {
   factory Product.fromMap(Map<String, dynamic> map) {
     return Product(
       id: map['_id'],
-      metadata: ProductMetadata.fromMap(map['metadata']),
+      metadata: ProductMetadata(
+        createdAt: 0,
+        createdBy: '',
+        editedAt: 0,
+        editedBy: '',
+        isDeleted: false,
+        isActive: true,
+        isEdited: false,
+      ), //.fromMap(map['metadata'])
+
       title: map['title'],
-      price: map['price'],
+      price: 99.0, //map['price']
       images: List<String>.from(map['images']),
       stats: ProductStats.fromMap(map['stats']),
       details: ProductDetails.fromMap(map['details']),

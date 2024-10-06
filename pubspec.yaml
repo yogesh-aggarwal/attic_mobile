@@ -39,6 +39,7 @@ dependencies:
   provider: ^6.1.2
   lucide_icons: ^0.257.0
   google_fonts: ^6.2.1
+  http: ^1.2.2
 
 dev_dependencies:
   flutter_test:
