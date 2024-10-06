@@ -14,7 +14,7 @@ class HomePageHeader extends StatelessWidget implements PreferredSizeWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
       child: [
         const Icon(LucideIcons.menu),
-        "Hi there!".text.size(20).color(Colors.black).bold.make().p16(),
+        "Attic".text.size(20).color(Colors.black).bold.make().p16(),
         const Icon(LucideIcons.bell),
       ].hStack(
         alignment: MainAxisAlignment.spaceBetween,
