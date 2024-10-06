@@ -1,4 +1,5 @@
 import 'package:attic_mobile/widgets/pages/home/sections/most_popular.dart';
+import 'package:attic_mobile/widgets/pages/home/sections/spotlight.dart';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -33,6 +34,8 @@ class _HomePageState extends State<HomePage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        const HomePageSpotlightSection(),
+        32.heightBox,
         const HomePagePopularBrandsSection(),
         32.heightBox,
         const HomePageMostPopularSection(),
