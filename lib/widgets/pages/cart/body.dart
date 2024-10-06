@@ -1,6 +1,6 @@
-import 'package:attic_mobile/widgets/pages/home/sections/most_popular.dart';
-import 'package:attic_mobile/widgets/pages/home/sections/popular_brands.dart';
-import 'package:attic_mobile/widgets/pages/home/sections/spotlight.dart';
+import 'package:attic_mobile/widgets/pages/cart/sections/items.dart';
+import 'package:attic_mobile/widgets/pages/cart/sections/recommended.dart';
+import 'package:attic_mobile/widgets/pages/cart/sections/spotlight.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -14,11 +14,11 @@ class CartPageBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const HomePageSpotlightSection(),
+        const CartPageItemsSection(),
         36.heightBox,
-        const HomePagePopularBrandsSection(),
+        const CartPageRecommendedSection(),
         36.heightBox,
-        const HomePageMostPopularSection(),
+        const CartPageSpotlightSection(),
       ],
     ).p16().scrollVertical(controller: scrollController);
   }
