@@ -23,11 +23,7 @@ class CartPageItemsSection extends StatelessWidget {
         [
           product.title.text.size(16).color(Colors.black).bold.ellipsis.make(),
           4.heightBox,
-          "INR ${product.price.round()}.99"
-              .text
-              .size(14)
-              .make()
-              .shimmer(count: 1, primaryColor: Colors.black),
+          "INR ${product.price.round()}.99".text.size(14).make(),
           4.heightBox,
         ]
             .vStack(crossAlignment: CrossAxisAlignment.start)
@@ -40,7 +36,7 @@ class CartPageItemsSection extends StatelessWidget {
         InkWell(
           onTap: () {},
           borderRadius: BorderRadius.circular(30),
-          child: const Icon(Icons.add, size: 16)
+          child: const Icon(Icons.remove, size: 16)
               .p(6)
               .box
               .roundedFull
@@ -53,7 +49,7 @@ class CartPageItemsSection extends StatelessWidget {
         InkWell(
           onTap: () {},
           borderRadius: BorderRadius.circular(30),
-          child: const Icon(Icons.remove, size: 16)
+          child: const Icon(Icons.add, size: 16)
               .p(6)
               .box
               .roundedFull
@@ -69,7 +65,8 @@ class CartPageItemsSection extends StatelessWidget {
     return [
       CartPageSection(
         title: "Items",
-        child: "5 items".text.make(),
+        child:
+            "5 items".text.make().shimmer(count: 1, primaryColor: Colors.black),
       ),
       _buildItem(context, product),
       8.0.heightBox,

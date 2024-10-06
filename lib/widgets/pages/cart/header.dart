@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class CartPageHeader extends StatelessWidget implements PreferredSizeWidget {
@@ -26,9 +27,9 @@ class CartPageHeader extends StatelessWidget implements PreferredSizeWidget {
             : null,
       ),
       child: [
-        Container(),
+        const Icon(LucideIcons.gift),
         "Cart".text.size(20).color(Colors.black).bold.make().p16(),
-        Container(),
+        const Icon(LucideIcons.trash),
       ].hStack(alignment: MainAxisAlignment.spaceBetween),
     );
   }

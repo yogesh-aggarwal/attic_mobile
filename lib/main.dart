@@ -48,13 +48,13 @@ class Root extends StatefulWidget {
 }
 
 class _RootState extends State<Root> {
-  int _selectedIndex = 1;
+  int _selectedIndex = 2;
 
   final List<Widget> _pages = [
     const HomePage(),
+    const HomePage(),
+    const HomePage(),
     const CartPage(),
-    const HomePage(),
-    const HomePage(),
     const HomePage(),
   ];
 
@@ -94,10 +94,10 @@ class _RootState extends State<Root> {
         ],
       ),
       child: [
-        _buildBottomBarButton(0, LucideIcons.home),
-        _buildBottomBarButton(1, LucideIcons.shoppingCart),
-        _buildBottomBarButton(2, LucideIcons.search),
-        _buildBottomBarButton(3, LucideIcons.heart),
+        _buildBottomBarButton(0, LucideIcons.heart),
+        _buildBottomBarButton(1, LucideIcons.search),
+        _buildBottomBarButton(2, LucideIcons.home),
+        _buildBottomBarButton(3, LucideIcons.shoppingCart),
         _buildBottomBarButton(4, LucideIcons.user),
       ].hStack(
         alignment: MainAxisAlignment.spaceEvenly,
