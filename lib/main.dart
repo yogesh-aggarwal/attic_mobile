@@ -2,6 +2,7 @@ import "package:attic_mobile/providers/products.dart";
 import "package:attic_mobile/widgets/pages/cart/cart.dart";
 import "package:attic_mobile/widgets/pages/home/home.dart";
 import "package:attic_mobile/providers/user.dart";
+import "package:attic_mobile/widgets/pages/search/search.dart";
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
 import "package:lucide_icons/lucide_icons.dart";
@@ -54,7 +55,7 @@ class _RootState extends State<Root> {
 
   final List<Widget> _pages = [
     const HomePage(),
-    const HomePage(),
+    const SearchPage(),
     const HomePage(),
     const CartPage(),
     const HomePage(),
