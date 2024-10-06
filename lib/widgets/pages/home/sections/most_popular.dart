@@ -1,6 +1,7 @@
+import 'package:attic_mobile/providers/products.dart';
 import 'package:attic_mobile/widgets/common/product_grid.dart';
 import 'package:attic_mobile/widgets/pages/home/common/section.dart';
-import 'package:attic_mobile/core/misc.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -23,7 +24,7 @@ class HomePageMostPopularSection extends StatelessWidget {
       HomePageSection(title: "Most Popular", child: _buildViewAllButton()),
       ProductGrid(
         crossAxisCount: 2,
-        products: [product, product, product, product],
+        products: context.read<ProductsProvider>().getRandProducts(4),
       ),
     ].vStack(crossAlignment: CrossAxisAlignment.start);
   }

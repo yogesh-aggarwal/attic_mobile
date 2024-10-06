@@ -1,4 +1,5 @@
 import 'package:attic_mobile/types/product.dart';
+import 'package:flutter/material.dart';
 
 final Product product = Product.fromMap({
   "_id": "66e6af48a33d768383063509",
@@ -94,3 +95,14 @@ final Product product = Product.fromMap({
     "baseDeliveryCharges": 32.0,
   }
 });
+
+class ProductsProvider with ChangeNotifier {
+  List<Product>? _products = List.generate(100, (_) => product);
+
+  List<Product> getRandProducts(int count) {
+    return List.generate(count, (_) {
+      return _products![
+          DateTime.now().millisecondsSinceEpoch % _products!.length];
+    });
+  }
+}

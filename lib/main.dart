@@ -1,3 +1,4 @@
+import "package:attic_mobile/providers/products.dart";
 import "package:attic_mobile/widgets/pages/cart/cart.dart";
 import "package:attic_mobile/widgets/pages/home/home.dart";
 import "package:attic_mobile/providers/user.dart";
@@ -13,6 +14,7 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => UserProvider()),
+        ChangeNotifierProvider(create: (_) => ProductsProvider()),
       ],
       child: const Application(),
     ),

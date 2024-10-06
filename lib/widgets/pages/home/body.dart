@@ -1,10 +1,11 @@
+import 'package:attic_mobile/providers/products.dart';
 import 'package:attic_mobile/widgets/pages/home/sections/generic.dart';
 import 'package:attic_mobile/widgets/pages/home/sections/most_popular.dart';
 import 'package:attic_mobile/widgets/pages/home/sections/new_arrivals.dart';
 import 'package:attic_mobile/widgets/pages/home/sections/popular_brands.dart';
 import 'package:attic_mobile/widgets/pages/home/sections/spotlight.dart';
-import 'package:attic_mobile/core/misc.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class HomePageBody extends StatelessWidget {
@@ -27,19 +28,19 @@ class HomePageBody extends StatelessWidget {
         36.heightBox,
         HomePageGenericSection(
           title: "🚨 Almost Sold Out",
-          products: [product, product, product, product],
+          products: context.read<ProductsProvider>().getRandProducts(4),
           onTap: () => print("Tapped on 40% Off"),
         ),
         36.heightBox,
         HomePageGenericSection(
           title: "💸 40% Off",
-          products: [product, product, product, product],
+          products: context.read<ProductsProvider>().getRandProducts(4),
           onTap: () => print("Tapped on 40% Off"),
         ),
         36.heightBox,
         HomePageGenericSection(
           title: "🤌 Hand Picked For You",
-          products: [product, product, product, product],
+          products: context.read<ProductsProvider>().getRandProducts(4),
           onTap: () => print("Tapped on Hand Picked For You"),
         ),
         36.heightBox,

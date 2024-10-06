@@ -1,6 +1,7 @@
+import 'package:attic_mobile/providers/products.dart';
 import 'package:attic_mobile/types/product.dart';
 import 'package:attic_mobile/widgets/pages/cart/common/section.dart';
-import 'package:attic_mobile/core/misc.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -62,20 +63,18 @@ class CartPageItemsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final products = context.read<ProductsProvider>().getRandProducts(5);
+
     return [
       CartPageSection(
         title: "Items",
         child: "5 items".text.make(),
       ),
-      _buildItem(context, product),
-      8.0.heightBox,
-      _buildItem(context, product),
-      8.0.heightBox,
-      _buildItem(context, product),
-      8.0.heightBox,
-      _buildItem(context, product),
-      8.0.heightBox,
-      _buildItem(context, product),
+      _buildItem(context, products[0]),
+      for (final product in products.sublist(1)) ...[
+        8.0.heightBox,
+        _buildItem(context, product),
+      ],
     ].vStack(crossAlignment: CrossAxisAlignment.start);
   }
 }
