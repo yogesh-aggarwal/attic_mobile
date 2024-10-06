@@ -1,0 +1,110 @@
+import "package:attic_mobile/pages/home/home.dart";
+import "package:attic_mobile/providers/user.dart";
+import "package:flutter/material.dart";
+import "package:lucide_icons/lucide_icons.dart";
+import "package:provider/provider.dart";
+import "package:velocity_x/velocity_x.dart";
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => UserProvider()),
+      ],
+      child: Application(),
+    ),
+  );
+}
+
+class Application extends StatelessWidget {
+  const Application({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Attic",
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        brightness: Brightness.light,
+      ),
+      home: Root(),
+    );
+  }
+}
+
+class Root extends StatefulWidget {
+  const Root({super.key});
+
+  @override
+  State<Root> createState() => _RootState();
+}
+
+class _RootState extends State<Root> {
+  int _selectedIndex = 0;
+
+  final List<Widget> _pages = [
+    const HomePage(),
+    const HomePage(),
+    const HomePage(),
+    const HomePage(),
+    const HomePage(),
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  Widget _buildBottomBarButton(int index, IconData icon) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          _selectedIndex = index;
+        });
+      },
+      child: AnimatedOpacity(
+        opacity: _selectedIndex == index ? 1.0 : 0.5,
+        duration: const Duration(milliseconds: 200),
+        child: Icon(icon, size: 23),
+      ),
+    );
+  }
+
+  Widget _buildBottomBar() {
+    return Container(
+      height: 70,
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border(top: BorderSide(color: Colors.grey.shade200)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.shade300,
+            offset: const Offset(0, -4),
+            blurRadius: 40.0,
+          ),
+        ],
+      ),
+      child: [
+        _buildBottomBarButton(0, LucideIcons.home),
+        _buildBottomBarButton(1, LucideIcons.shoppingCart),
+        _buildBottomBarButton(2, LucideIcons.search),
+        _buildBottomBarButton(3, LucideIcons.heart),
+        _buildBottomBarButton(4, LucideIcons.user),
+      ].hStack(
+        alignment: MainAxisAlignment.spaceEvenly,
+        crossAlignment: CrossAxisAlignment.center,
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      // appBar: _buildBottomNavigationBar(),
+      bottomNavigationBar: _buildBottomBar(),
+      body: SafeArea(child: _pages[_selectedIndex]),
+    );
+  }
+}
