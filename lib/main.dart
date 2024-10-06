@@ -3,6 +3,7 @@ import "package:attic_mobile/widgets/pages/cart/cart.dart";
 import "package:attic_mobile/widgets/pages/home/home.dart";
 import "package:attic_mobile/providers/user.dart";
 import "package:attic_mobile/widgets/pages/search/search.dart";
+import "package:attic_mobile/widgets/pages/wishlist/wishlist.dart";
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
 import "package:lucide_icons/lucide_icons.dart";
@@ -51,10 +52,10 @@ class Root extends StatefulWidget {
 }
 
 class _RootState extends State<Root> {
-  int _selectedIndex = 2;
+  int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    const HomePage(),
+    const WishlistPage(),
     const SearchPage(),
     const HomePage(),
     const CartPage(),
