@@ -34,7 +34,7 @@ class Application extends StatelessWidget {
       //   physics: const BouncingScrollPhysics(),
       // ),
       theme: ThemeData(
-        primaryColor: Colors.red,
+        primaryColor: Colors.black,
         brightness: Brightness.light,
         textTheme: GoogleFonts.dmSansTextTheme(Theme.of(context).textTheme),
       ),
