@@ -77,7 +77,7 @@ class _CartPageFooterState extends State<CartPageFooter>
                       const Icon(LucideIcons.moveRight,
                           color: Colors.white, size: 20),
                     ].hStack().shimmer(
-                        count: 1,
+                        count: 2,
                         primaryColor: Colors.white,
                         secondaryColor: Colors.black),
                   ].hStack(alignment: MainAxisAlignment.spaceBetween),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-const height = 140.0;
+const height = 134.0;
 
 class SearchPageHeader extends StatefulWidget implements PreferredSizeWidget {
   final bool hasBottomBorder;
@@ -55,7 +55,7 @@ class _SearchPageHeaderState extends State<SearchPageHeader> {
 
   Widget _buildSearchBar() {
     return SizedBox(
-      height: 60,
+      height: 56,
       width: double.infinity,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -69,6 +69,7 @@ class _SearchPageHeaderState extends State<SearchPageHeader> {
             const Icon(LucideIcons.search, color: Colors.grey),
             12.widthBox,
             TextField(
+              autofocus: true,
               controller: _searchController,
               onSubmitted: _handleSubmit,
               decoration: const InputDecoration(
@@ -118,7 +119,7 @@ class _SearchPageHeaderState extends State<SearchPageHeader> {
     return [
       widgets[0],
       for (var widget in widgets.sublist(1)) ...[
-        8.widthBox,
+        6.widthBox,
         widget,
       ],
     ].hStack().scrollHorizontal();
