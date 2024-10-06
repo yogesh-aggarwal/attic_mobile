@@ -1,6 +1,7 @@
-import "package:attic_mobile/pages/home/home.dart";
+import "package:attic_mobile/widgets/pages/home/home.dart";
 import "package:attic_mobile/providers/user.dart";
 import "package:flutter/material.dart";
+import "package:google_fonts/google_fonts.dart";
 import "package:lucide_icons/lucide_icons.dart";
 import "package:provider/provider.dart";
 import "package:velocity_x/velocity_x.dart";
@@ -27,8 +28,9 @@ class Application extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.light,
+        textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
       ),
-      home: Root(),
+      home: const Root(),
     );
   }
 }
@@ -102,7 +104,6 @@ class _RootState extends State<Root> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: _buildBottomNavigationBar(),
       bottomNavigationBar: _buildBottomBar(),
       body: SafeArea(child: _pages[_selectedIndex]),
     );
