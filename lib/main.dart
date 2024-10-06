@@ -13,7 +13,7 @@ void main() async {
       providers: [
         ChangeNotifierProvider(create: (_) => UserProvider()),
       ],
-      child: Application(),
+      child: const Application(),
     ),
   );
 }
@@ -26,9 +26,13 @@ class Application extends StatelessWidget {
     return MaterialApp(
       title: "Attic",
       debugShowCheckedModeBanner: false,
+      scrollBehavior: const MaterialScrollBehavior().copyWith(
+        physics: const BouncingScrollPhysics(),
+      ),
       theme: ThemeData(
+        primaryColor: Colors.red,
         brightness: Brightness.light,
-        textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
+        textTheme: GoogleFonts.dmSansTextTheme(Theme.of(context).textTheme),
       ),
       home: const Root(),
     );
@@ -82,7 +86,7 @@ class _RootState extends State<Root> {
         border: Border(top: BorderSide(color: Colors.grey.shade200)),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.shade300,
+            color: Colors.black.withOpacity(0.15),
             offset: const Offset(0, -4),
             blurRadius: 40.0,
           ),
