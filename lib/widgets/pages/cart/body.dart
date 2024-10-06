@@ -4,10 +4,10 @@ import 'package:attic_mobile/widgets/pages/home/sections/spotlight.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class HomePageBody extends StatelessWidget {
+class CartPageBody extends StatelessWidget {
   final ScrollController scrollController;
 
-  const HomePageBody({super.key, required this.scrollController});
+  const CartPageBody({super.key, required this.scrollController});
 
   @override
   Widget build(BuildContext context) {

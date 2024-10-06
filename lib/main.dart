@@ -1,3 +1,4 @@
+import "package:attic_mobile/widgets/pages/cart/cart.dart";
 import "package:attic_mobile/widgets/pages/home/home.dart";
 import "package:attic_mobile/providers/user.dart";
 import "package:flutter/material.dart";
@@ -51,7 +52,7 @@ class _RootState extends State<Root> {
 
   final List<Widget> _pages = [
     const HomePage(),
-    const HomePage(),
+    const CartPage(),
     const HomePage(),
     const HomePage(),
     const HomePage(),
@@ -83,10 +84,10 @@ class _RootState extends State<Root> {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
         color: Colors.white,
-        border: Border(top: BorderSide(color: Colors.grey.shade200)),
+        border: Border(top: BorderSide(width: 2, color: Colors.grey.shade300)),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.15),
+            color: Colors.black.withOpacity(0.18),
             offset: const Offset(0, -4),
             blurRadius: 40.0,
           ),

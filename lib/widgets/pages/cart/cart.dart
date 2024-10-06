@@ -1,15 +1,15 @@
-import 'package:attic_mobile/widgets/pages/home/body.dart';
-import 'package:attic_mobile/widgets/pages/home/header.dart';
+import 'package:attic_mobile/widgets/pages/cart/body.dart';
+import 'package:attic_mobile/widgets/pages/cart/header.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class CartPage extends StatefulWidget {
+  const CartPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<CartPage> createState() => _CartPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _CartPageState extends State<CartPage> {
   final ScrollController _controller = ScrollController();
 
   bool _isScrolled = false;
@@ -40,8 +40,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: HomePageHeader(hasBottomBorder: _isScrolled),
-      body: HomePageBody(scrollController: _controller),
+      appBar: CartPageHeader(hasBottomBorder: _isScrolled),
+      body: CartPageBody(scrollController: _controller),
     );
   }
 }
