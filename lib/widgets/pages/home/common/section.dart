@@ -14,6 +14,6 @@ class HomePageSection extends StatelessWidget {
       title.text.size(18).semiBold.make(),
       16.heightBox,
       child ?? Container(),
-    ].hStack(alignment: MainAxisAlignment.spaceBetween);
+    ].hStack(alignment: MainAxisAlignment.spaceBetween).pOnly(bottom: 16);
   }
 }

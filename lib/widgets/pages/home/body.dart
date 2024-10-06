@@ -13,9 +13,9 @@ class HomePageBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const HomePageSpotlightSection(),
-        32.heightBox,
+        36.heightBox,
         const HomePagePopularBrandsSection(),
-        32.heightBox,
+        36.heightBox,
         const HomePageMostPopularSection(),
       ],
     ).p16().scrollVertical();

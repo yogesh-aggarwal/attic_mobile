@@ -23,7 +23,7 @@ class HomePagePopularBrandsSection extends StatelessWidget {
             .color(Theme.of(context).primaryColor.withOpacity(0.1))
             .make(),
       ),
-      8.heightBox,
+      6.heightBox,
       title.text.size(8).medium.make(),
     ].vStack().onTap(onTap);
   }
@@ -34,7 +34,6 @@ class HomePagePopularBrandsSection extends StatelessWidget {
 
     return [
       const HomePageSection(title: "Popular Brands"),
-      16.heightBox,
       [
         _buildBrandIcon(
           context: context,
