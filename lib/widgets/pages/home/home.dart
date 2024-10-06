@@ -18,11 +18,13 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     _controller.addListener(() {
-      if (_controller.position.pixels > 0 && !_isScrolled) {
+      const scrollThreshold = 15;
+
+      if (_controller.position.pixels > scrollThreshold && !_isScrolled) {
         setState(() {
           _isScrolled = true;
         });
-      } else if (_controller.position.pixels == 0 && _isScrolled) {
+      } else if (_controller.position.pixels < scrollThreshold && _isScrolled) {
         setState(() {
           _isScrolled = false;
         });

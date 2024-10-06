@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:attic_mobile/types/product.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -35,27 +37,23 @@ class ProductCard extends StatelessWidget {
   }
 
   Widget _buildMultiImage() {
-    return Row(
-      children: [
+    const maxImages = 3;
+
+    List<Widget> images = [];
+    for (int i = 0; i < min(maxImages, product.images.length); i++) {
+      images.add(
         Image.network(
-          product.images[0],
+          product.images[i],
           fit: BoxFit.cover,
           height: 120,
         ).cornerRadius(10).expand(),
-        4.widthBox,
-        Image.network(
-          product.images[1],
-          fit: BoxFit.cover,
-          height: 120,
-        ).cornerRadius(10).expand(),
-        4.widthBox,
-        Image.network(
-          product.images[2],
-          fit: BoxFit.cover,
-          height: 120,
-        ).cornerRadius(10).expand(),
-      ],
-    );
+      );
+      if (i != product.images.length - 1) {
+        images.add(4.widthBox);
+      }
+    }
+
+    return images.hStack();
   }
 
   Widget _buildImage() {

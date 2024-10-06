@@ -125,8 +125,6 @@ class ProductsProvider with ChangeNotifier {
     final products = json["data"];
     _products = products.map<Product>((x) => Product.fromMap(x)).toList();
 
-    print(_products!.length);
-
     notifyListeners();
   }
 }
