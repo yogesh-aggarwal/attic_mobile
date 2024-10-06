@@ -1,6 +1,6 @@
 import 'package:attic_mobile/types/product.dart';
 import 'package:attic_mobile/widgets/pages/cart/common/section.dart';
-import 'package:attic_mobile/widgets/pages/lib/misc.dart';
+import 'package:attic_mobile/core/misc.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 

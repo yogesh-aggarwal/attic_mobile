@@ -6,6 +6,7 @@ import 'package:velocity_x/velocity_x.dart';
 class ProductGrid extends StatelessWidget {
   final int crossAxisCount;
   final double gridSpacing;
+  final Axis scrollDirection;
   final List<Product> products;
 
   const ProductGrid({
@@ -13,6 +14,7 @@ class ProductGrid extends StatelessWidget {
     required this.products,
     this.gridSpacing = 8.0,
     this.crossAxisCount = 2,
+    this.scrollDirection = Axis.vertical,
   });
 
   @override
