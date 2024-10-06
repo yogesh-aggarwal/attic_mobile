@@ -1,7 +1,6 @@
+import 'package:attic_mobile/widgets/pages/home/common/section.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
-
-import 'package:attic_mobile/widgets/pages/home/section.dart';
 
 class HomePageMostPopularSection extends StatelessWidget {
   const HomePageMostPopularSection({super.key});
