@@ -11,7 +11,7 @@ class HomePageMostPopularSection extends StatelessWidget {
   Widget _buildViewAllButton() {
     return [
       "View All".text.size(12).semiBold.gray600.make(),
-      2.widthBox,
+      4.widthBox,
       "(20)".text.size(12).gray400.make(),
     ].row().onTap(() {
       print("Tapped on View All");

@@ -10,6 +10,7 @@ class HomePageGenericSection extends StatelessWidget {
   final int visibleProductCount;
   final Function() onTap;
   final Axis scrollDirection;
+  final bool highlightStock;
 
   const HomePageGenericSection({
     super.key,
@@ -18,12 +19,13 @@ class HomePageGenericSection extends StatelessWidget {
     required this.onTap,
     this.visibleProductCount = 4,
     this.scrollDirection = Axis.vertical,
+    this.highlightStock = false,
   });
 
   Widget _buildViewAllButton() {
     return [
       "View All".text.size(12).semiBold.gray600.make(),
-      2.widthBox,
+      4.widthBox,
       "(20)".text.size(12).gray400.make(),
     ].row().onTap(onTap);
   }
@@ -35,6 +37,7 @@ class HomePageGenericSection extends StatelessWidget {
       ProductGrid(
         crossAxisCount: 2,
         scrollDirection: scrollDirection,
+        highlightStock: highlightStock,
         products: products.take(visibleProductCount).toList(),
       ),
     ].vStack(crossAlignment: CrossAxisAlignment.start);

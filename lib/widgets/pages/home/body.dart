@@ -29,6 +29,7 @@ class HomePageBody extends StatelessWidget {
         HomePageGenericSection(
           title: "🚨 Almost Sold Out",
           products: context.read<ProductsProvider>().getRandProducts(4),
+          highlightStock: true,
           onTap: () => print("Tapped on 40% Off"),
         ),
         36.heightBox,

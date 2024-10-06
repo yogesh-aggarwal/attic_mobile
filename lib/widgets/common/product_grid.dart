@@ -8,6 +8,7 @@ class ProductGrid extends StatelessWidget {
   final double gridSpacing;
   final Axis scrollDirection;
   final List<Product> products;
+  final bool highlightStock;
 
   const ProductGrid({
     super.key,
@@ -15,6 +16,7 @@ class ProductGrid extends StatelessWidget {
     this.gridSpacing = 8.0,
     this.crossAxisCount = 2,
     this.scrollDirection = Axis.vertical,
+    this.highlightStock = false,
   });
 
   @override
@@ -31,6 +33,7 @@ class ProductGrid extends StatelessWidget {
             imageType: crossAxisCount == 1
                 ? ProductCardImage.multi
                 : ProductCardImage.small,
+            highlightStock: highlightStock,
           ).expand());
         } else {
           row.add(Container().expand());

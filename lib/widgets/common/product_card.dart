@@ -7,11 +7,13 @@ enum ProductCardImage { small, big, multi }
 class ProductCard extends StatelessWidget {
   final Product product;
   final ProductCardImage imageType;
+  final bool highlightStock;
 
   const ProductCard({
     super.key,
     required this.product,
     this.imageType = ProductCardImage.small,
+    this.highlightStock = false,
   });
 
   Widget _buildSmallImage() {
@@ -120,16 +122,20 @@ class ProductCard extends StatelessWidget {
                 .text
                 .size(14)
                 .semiBold
-                .make(),
+                .make()
+                .expand(),
             12.widthBox,
             // Discount
-            "${product.details.stock} in stock"
+            (highlightStock
+                    ? "Only ${product.details.stock} left"
+                    : "${product.details.stock} in stock")
                 .text
                 .size(12)
                 .ellipsis
-                .gray400
-                .make()
-                .expand(),
+                .color(highlightStock ? Colors.red : Colors.grey.shade600)
+                .fontWeight(
+                    highlightStock ? FontWeight.bold : FontWeight.normal)
+                .make(),
           ].hStack(alignment: MainAxisAlignment.spaceBetween).px12(),
           14.heightBox,
         ].vStack(crossAlignment: CrossAxisAlignment.start),
