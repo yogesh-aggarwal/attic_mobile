@@ -15,7 +15,7 @@ class CartPageRecommendedSection extends StatelessWidget {
     return [
       const CartPageSection(title: "Similar Items"),
       ProductGrid(products: products.take(2).toList(), crossAxisCount: 2),
-      8.0.heightBox,
+      10.0.heightBox,
       ProductGrid(products: [products[2]], crossAxisCount: 1),
     ].vStack(crossAlignment: CrossAxisAlignment.start);
   }

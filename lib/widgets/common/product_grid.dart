@@ -13,7 +13,7 @@ class ProductGrid extends StatelessWidget {
   const ProductGrid({
     super.key,
     required this.products,
-    this.gridSpacing = 8.0,
+    this.gridSpacing = 10.0,
     this.crossAxisCount = 2,
     this.scrollDirection = Axis.vertical,
     this.highlightStock = false,

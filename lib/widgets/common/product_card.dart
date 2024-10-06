@@ -39,21 +39,20 @@ class ProductCard extends StatelessWidget {
   Widget _buildMultiImage() {
     const maxImages = 3;
 
-    List<Widget> images = [];
+    List<Widget> widgets = [];
     for (int i = 0; i < min(maxImages, product.images.length); i++) {
-      images.add(
+      widgets.add(
         Image.network(
           product.images[i],
           fit: BoxFit.cover,
           height: 120,
         ).cornerRadius(10).expand(),
       );
-      if (i != product.images.length - 1) {
-        images.add(4.widthBox);
-      }
+      widgets.add(4.widthBox);
     }
+    widgets.removeLast();
 
-    return images.hStack();
+    return widgets.hStack();
   }
 
   Widget _buildImage() {
@@ -118,6 +117,7 @@ class ProductCard extends StatelessWidget {
             "INR ${product.costing.sellingPrice.round()}.99"
                 .toString()
                 .text
+                .ellipsis
                 .size(14)
                 .semiBold
                 .make()

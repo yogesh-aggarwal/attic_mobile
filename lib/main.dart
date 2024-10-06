@@ -2,6 +2,7 @@ import "package:attic_mobile/providers/products.dart";
 import "package:attic_mobile/widgets/pages/cart/cart.dart";
 import "package:attic_mobile/widgets/pages/home/home.dart";
 import "package:attic_mobile/providers/user.dart";
+import "package:attic_mobile/widgets/pages/profile/wishlist.dart";
 import "package:attic_mobile/widgets/pages/search/search.dart";
 import "package:attic_mobile/widgets/pages/wishlist/wishlist.dart";
 import "package:flutter/material.dart";
@@ -59,7 +60,7 @@ class _RootState extends State<Root> {
     const SearchPage(),
     const HomePage(),
     const CartPage(),
-    const HomePage(),
+    const ProfilePage(),
   ];
 
   @override
