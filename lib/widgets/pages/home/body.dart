@@ -25,13 +25,29 @@ class HomePageBody extends StatelessWidget {
         36.heightBox,
         const HomePageNewArrivalsSection(),
         36.heightBox,
-        // HomePageGenericSection(
-        //   title: "40% Off",
-        //   products: [product, product, product, product],
-        //   onTap: () => print("Tapped on 40% Off"),
-        // ),
+        HomePageGenericSection(
+          title: "🚨 Almost Sold Out",
+          products: [product, product, product, product],
+          onTap: () => print("Tapped on 40% Off"),
+        ),
         36.heightBox,
-        const HomePageSpotlightSection(),
+        HomePageGenericSection(
+          title: "💸 40% Off",
+          products: [product, product, product, product],
+          onTap: () => print("Tapped on 40% Off"),
+        ),
+        36.heightBox,
+        HomePageGenericSection(
+          title: "🤌 Hand Picked For You",
+          products: [product, product, product, product],
+          onTap: () => print("Tapped on Hand Picked For You"),
+        ),
+        36.heightBox,
+        HomePageGenericSection(
+          title: "🎁 Top Gifting Choices",
+          products: [product, product, product, product, product, product],
+          onTap: () => print("Tapped on Hand Picked For You"),
+        ),
       ],
     ).p16().scrollVertical(controller: scrollController);
   }

@@ -37,6 +37,6 @@ class HomePageGenericSection extends StatelessWidget {
         scrollDirection: scrollDirection,
         products: products.take(visibleProductCount).toList(),
       ),
-    ].hStack(crossAlignment: CrossAxisAlignment.start);
+    ].vStack(crossAlignment: CrossAxisAlignment.start);
   }
 }

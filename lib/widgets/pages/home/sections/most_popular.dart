@@ -23,7 +23,7 @@ class HomePageMostPopularSection extends StatelessWidget {
       HomePageSection(title: "Most Popular", child: _buildViewAllButton()),
       ProductGrid(
         crossAxisCount: 2,
-        products: [product, product, product, product, product],
+        products: [product, product, product, product],
       ),
     ].vStack(crossAlignment: CrossAxisAlignment.start);
   }

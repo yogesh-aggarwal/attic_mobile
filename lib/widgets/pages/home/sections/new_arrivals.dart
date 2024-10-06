@@ -20,7 +20,7 @@ class HomePageNewArrivalsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return [
-      HomePageSection(title: "New Arrivals", child: _buildViewAllButton()),
+      HomePageSection(title: "🚀 New Arrivals", child: _buildViewAllButton()),
       ProductGrid(
         crossAxisCount: 1,
         products: [product, product, product, product],

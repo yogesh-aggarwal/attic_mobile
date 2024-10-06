@@ -65,8 +65,7 @@ class CartPageItemsSection extends StatelessWidget {
     return [
       CartPageSection(
         title: "Items",
-        child:
-            "5 items".text.make().shimmer(count: 1, primaryColor: Colors.black),
+        child: "5 items".text.make(),
       ),
       _buildItem(context, product),
       8.0.heightBox,
