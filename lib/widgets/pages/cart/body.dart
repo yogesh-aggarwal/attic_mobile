@@ -16,9 +16,9 @@ class CartPageBody extends StatelessWidget {
       children: [
         const CartPageItemsSection(),
         36.heightBox,
-        const CartPageRecommendedSection(),
-        36.heightBox,
         const CartPageSpotlightSection(),
+        36.heightBox,
+        const CartPageRecommendedSection(),
       ],
     ).p16().scrollVertical(controller: scrollController);
   }

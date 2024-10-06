@@ -48,7 +48,7 @@ class Root extends StatefulWidget {
 }
 
 class _RootState extends State<Root> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
 
   final List<Widget> _pages = [
     const HomePage(),

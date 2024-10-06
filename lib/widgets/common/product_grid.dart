@@ -12,7 +12,7 @@ class ProductGrid extends StatelessWidget {
     super.key,
     required this.products,
     this.gridSpacing = 8.0,
-    this.crossAxisCount = 1,
+    this.crossAxisCount = 2,
   });
 
   @override
@@ -34,25 +34,17 @@ class ProductGrid extends StatelessWidget {
           row.add(Container().expand());
         }
 
-        bool isLast = j + 1 == crossAxisCount;
-        if (!isLast) {
-          row.add(gridSpacing.widthBox);
-        }
+        row.add(gridSpacing.widthBox);
       }
+
+      row.removeLast();
 
       children.add(row.hStack());
-
-      bool isLast = i + 1 == products.length;
-      if (!isLast) {
-        children.add(gridSpacing.heightBox);
-      }
+      children.add(gridSpacing.heightBox);
     }
 
-    return children
-        .vStack(
-          alignment: MainAxisAlignment.start,
-          crossAlignment: CrossAxisAlignment.start,
-        )
-        .pOnly(bottom: 16);
+    children.removeLast();
+
+    return children.vStack(crossAlignment: CrossAxisAlignment.start);
   }
 }
