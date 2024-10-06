@@ -27,9 +27,9 @@ class Application extends StatelessWidget {
     return MaterialApp(
       title: "Attic",
       debugShowCheckedModeBanner: false,
-      scrollBehavior: const MaterialScrollBehavior().copyWith(
-        physics: const BouncingScrollPhysics(),
-      ),
+      // scrollBehavior: const MaterialScrollBehavior().copyWith(
+      //   physics: const BouncingScrollPhysics(),
+      // ),
       theme: ThemeData(
         primaryColor: Colors.red,
         brightness: Brightness.light,
