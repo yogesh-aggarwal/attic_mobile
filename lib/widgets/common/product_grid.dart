@@ -42,13 +42,13 @@ class ProductGrid extends StatelessWidget {
         row.add(gridSpacing.widthBox);
       }
 
-      row.removeLast();
+      if (row.isNotEmpty) row.removeLast();
 
       children.add(row.hStack());
       children.add(gridSpacing.heightBox);
     }
 
-    children.removeLast();
+    if (children.isNotEmpty) children.removeLast();
 
     return children.vStack(crossAlignment: CrossAxisAlignment.start);
   }

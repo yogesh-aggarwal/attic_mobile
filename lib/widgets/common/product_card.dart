@@ -50,7 +50,8 @@ class ProductCard extends StatelessWidget {
       );
       widgets.add(4.widthBox);
     }
-    widgets.removeLast();
+
+    if (widgets.isNotEmpty) widgets.removeLast();
 
     return widgets.hStack();
   }

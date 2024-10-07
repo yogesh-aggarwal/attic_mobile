@@ -65,7 +65,7 @@ class _SearchPageBodyState extends State<SearchPageBody> {
       );
       categoriesWidgets.add(8.widthBox);
     }
-    categoriesWidgets.removeLast();
+    if (categoriesWidgets.isNotEmpty) categoriesWidgets.removeLast();
 
     return Stack(
       children: [

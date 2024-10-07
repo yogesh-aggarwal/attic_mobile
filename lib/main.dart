@@ -55,7 +55,7 @@ class Root extends StatefulWidget {
 }
 
 class _RootState extends State<Root> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 2;
 
   final List<Widget> _pages = [
     const WishlistPage(),
@@ -93,7 +93,6 @@ class _RootState extends State<Root> {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
         color: Colors.white,
-        border: Border(top: BorderSide(width: 2, color: Colors.grey.shade300)),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.18),

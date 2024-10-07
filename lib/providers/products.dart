@@ -10,6 +10,8 @@ class ProductsProvider with ChangeNotifier {
   final Map<String, Product> _products = {};
 
   List<Product> getRandProducts(int count) {
+    if (_products.isEmpty) return [];
+
     return List.generate(count, (_) {
       return _products.values.toList()[++counter % _products.length];
     });
@@ -19,8 +21,8 @@ class ProductsProvider with ChangeNotifier {
     final res = await http.get(
       Uri.parse("http://localhost:3000/v1/product/all"),
       headers: {
-        'Content-Type': 'application/json',
         'Accept': 'application/json',
+        'Content-Type': 'application/json',
       },
     );
 
