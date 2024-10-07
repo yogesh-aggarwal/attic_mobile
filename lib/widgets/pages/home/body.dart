@@ -47,7 +47,15 @@ class HomePageBody extends StatelessWidget {
         36.heightBox,
         HomePageGenericSection(
           title: "🎁 Top Gifting Choices",
-          products: [product, product, product, product, product, product],
+          visibleProductCount: 6,
+          products: context.read<ProductsProvider>().getRandProducts(6),
+          onTap: () => print("Tapped on Hand Picked For You"),
+        ),
+        36.heightBox,
+        HomePageGenericSection(
+          title: "🥰 Wall of Love",
+          visibleProductCount: 8,
+          products: context.read<ProductsProvider>().getRandProducts(8),
           onTap: () => print("Tapped on Hand Picked For You"),
         ),
       ],
