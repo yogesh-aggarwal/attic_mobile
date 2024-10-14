@@ -49,11 +49,11 @@ class Product {
 class ProductMetadata {
   final int createdAt;
   final int updatedAt;
-  final int publishedAt;
-  final int unpublishedAt;
-  final int reviewedAt;
-  final int releasedAt;
-  final int expirationDate;
+  final int? publishedAt;
+  final int? unpublishedAt;
+  final int? reviewedAt;
+  final int? releasedAt;
+  final int? expirationDate;
 
   ProductMetadata({
     required this.createdAt,
@@ -416,7 +416,7 @@ class ProductDetailsAttribute {
 class ProductReviews {
   final double averageRating;
   final int totalCount;
-  final Map<int, int> starDistribution;
+  final List<int> starDistribution;
 
   ProductReviews({
     required this.averageRating,
@@ -426,10 +426,9 @@ class ProductReviews {
 
   factory ProductReviews.fromMap(Map<String, dynamic> map) {
     return ProductReviews(
-      averageRating: map['average_rating'],
-      totalCount: map['total_count'],
-      starDistribution: Map<int, int>.from(map['star_distribution']
-          .map((key, value) => MapEntry(int.parse(key), value))),
+      averageRating: map['average_rating'].toDouble(),
+      totalCount: map['total_count'].toInt(),
+      starDistribution: List<int>.from(map['star_distribution'].map((x) => x)),
     );
   }
 

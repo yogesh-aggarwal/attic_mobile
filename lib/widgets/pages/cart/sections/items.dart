@@ -30,7 +30,11 @@ class CartPageItemsSection extends StatelessWidget {
               .ellipsis
               .make(),
           4.heightBox,
-          numberToCurrency("hi_IN", product.price).text.size(14).make(),
+          numberToCurrency("hi_IN", product.price)
+              .text
+              .ellipsis
+              .size(14)
+              .make(),
           4.heightBox,
         ]
             .vStack(crossAlignment: CrossAxisAlignment.start)

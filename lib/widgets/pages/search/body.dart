@@ -44,6 +44,8 @@ class _SearchPageBodyState extends State<SearchPageBody> {
           borderRadius: BorderRadius.circular(12),
           child: Container(
               width: context.screenWidth * 0.3,
+              constraints: const BoxConstraints(minWidth: 120),
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
               decoration: BoxDecoration(
                 color: isSelected
                     ? context.theme.primaryColor
@@ -55,7 +57,7 @@ class _SearchPageBodyState extends State<SearchPageBody> {
                 Icon(category.value,
                     color: isSelected ? Colors.white : Colors.black),
                 6.heightBox,
-                category.key.text
+                category.key.text.ellipsis
                     .size(14)
                     .color(isSelected ? Colors.white : Colors.black)
                     .bold

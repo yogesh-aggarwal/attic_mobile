@@ -11,7 +11,7 @@ class HomePageSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return [
-      title.text.size(20).semiBold.make(),
+      title.text.ellipsis.size(20).semiBold.make().expand(),
       16.heightBox,
       child ?? Container(),
     ].hStack(alignment: MainAxisAlignment.spaceBetween).pOnly(bottom: 16);

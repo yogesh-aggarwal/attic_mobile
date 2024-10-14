@@ -87,8 +87,9 @@ class ProductCard extends StatelessWidget {
           ],
         ),
         child: [
+          4.heightBox,
           // Image
-          _buildImage().p4(),
+          _buildImage().p8(),
           8.heightBox,
           // Row 1
           [
@@ -106,10 +107,10 @@ class ProductCard extends StatelessWidget {
           [
             // Brand name
             [
-              "Adidas".text.size(14).gray400.make(),
+              "Adidas".text.ellipsis.size(14).gray400.make().flexible(),
               4.widthBox,
               Icon(Icons.check_circle, size: 16, color: Colors.blue.shade800),
-            ].hStack(),
+            ].hStack().expand(),
             // Star rating
             [
               Icon(Icons.star, size: 16, color: Colors.yellow.shade800),
@@ -117,7 +118,7 @@ class ProductCard extends StatelessWidget {
               product.reviews.averageRating
                   .toString()
                   .text
-                  .size(14)
+                  .size(12.5)
                   .semiBold
                   .make(),
             ].hStack(),

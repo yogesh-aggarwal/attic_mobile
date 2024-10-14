@@ -79,6 +79,7 @@ class _SearchPageHeaderState extends State<SearchPageHeader> {
               ),
             ).expand(),
           ].hStack().expand(),
+          8.widthBox,
           [
             const Icon(LucideIcons.scanLine, color: Colors.grey)
                 .onTap(_handleOnScan),
