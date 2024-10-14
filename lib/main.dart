@@ -11,6 +11,7 @@ import "package:google_fonts/google_fonts.dart";
 import "package:lucide_icons/lucide_icons.dart";
 import "package:provider/provider.dart";
 import "package:velocity_x/velocity_x.dart";
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -37,11 +38,17 @@ class Application extends StatelessWidget {
       // scrollBehavior: const MaterialScrollBehavior().copyWith(
       //   physics: const BouncingScrollPhysics(),
       // ),
+      // Localization
+      locale: const Locale("en"),
+      supportedLocales: AppLocalizations.supportedLocales,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      // Theme
       theme: ThemeData(
         primaryColor: Colors.black,
         brightness: Brightness.light,
         textTheme: GoogleFonts.dmSansTextTheme(Theme.of(context).textTheme),
       ),
+      // UI
       home: const Root(),
     );
   }
