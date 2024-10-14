@@ -15,14 +15,19 @@ class CartPageItemsSection extends StatelessWidget {
     return [
       [
         Image.network(
-          product.images[0],
+          product.media.images[0].url,
           width: 60,
           height: 60,
           fit: BoxFit.cover,
         ).cornerRadius(12),
         10.widthBox,
         [
-          product.title.text.size(16).color(Colors.black).bold.ellipsis.make(),
+          product.listing.title.text
+              .size(16)
+              .color(Colors.black)
+              .bold
+              .ellipsis
+              .make(),
           4.heightBox,
           "INR ${product.price.round()}.99".text.size(14).make(),
           4.heightBox,
