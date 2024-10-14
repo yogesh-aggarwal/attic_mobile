@@ -1,3 +1,4 @@
+import 'package:attic_mobile/core/intl/utils.dart';
 import 'package:attic_mobile/providers/products.dart';
 import 'package:attic_mobile/types/product.dart';
 import 'package:attic_mobile/widgets/pages/cart/common/section.dart';
@@ -29,7 +30,7 @@ class CartPageItemsSection extends StatelessWidget {
               .ellipsis
               .make(),
           4.heightBox,
-          "INR ${product.price.round()}.99".text.size(14).make(),
+          numberToCurrency("hi_IN", product.price).text.size(14).make(),
           4.heightBox,
         ]
             .vStack(crossAlignment: CrossAxisAlignment.start)

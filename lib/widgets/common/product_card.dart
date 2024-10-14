@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:attic_mobile/core/intl/utils.dart';
 import 'package:attic_mobile/types/product.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -125,7 +126,7 @@ class ProductCard extends StatelessWidget {
           // Row 3
           [
             // Price
-            "INR ${product.price.round() + .99}"
+            numberToCurrency("hi_IN", product.price)
                 .toString()
                 .text
                 .ellipsis

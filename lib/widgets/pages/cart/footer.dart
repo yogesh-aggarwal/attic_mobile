@@ -1,3 +1,4 @@
+import 'package:attic_mobile/core/intl/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -70,7 +71,12 @@ class _CartPageFooterState extends State<CartPageFooter>
                     ],
                   ),
                   child: [
-                    "INR 999.99".text.white.medium.size(16).make(),
+                    numberToCurrency("hi_IN", 139999 * 5)
+                        .text
+                        .white
+                        .medium
+                        .size(16)
+                        .make(),
                     [
                       "Checkout".text.white.size(16).make(),
                       8.widthBox,
